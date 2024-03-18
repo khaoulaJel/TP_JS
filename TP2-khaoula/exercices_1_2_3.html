@@ -30,12 +30,14 @@
         <input type="text" placeholder="entrer le premier numero" id="nombre1">+ <input type="text" placeholder="entrer le deuxieme numero" id="nombre2"> = <span id="resultat"> </span> 
         <button onclick="additionner()"> calculer</button>
     </div>
+    
     <div class="exercice2">
         <h1>EXERCICE 2 </h1>
         <h2>entrer les deux valeurs a permuter:</h2>
         <input type="text" placeholder="entrer le premier numero" id="n1">  <input type="text" placeholder="entrer le deuxieme numero" id="n2">
         <button onclick="permuter()">Permuter</button>
     </div>
+    
     <div class="exercice3">
         <h1>EXERCICE 3 </h1>
         <h2>entrer les deux valeurs et choisir une operation:</h2>
@@ -48,10 +50,9 @@
         </select>
          <input type="text" placeholder="entrer le deuxieme numero" id="no2"> = <span id="resulat3"></span>
          <button onclick="calculer()">Calculer</button>
-    
-
-
     </div>
+
+    
     <script>
         function additionner (){
             var nombre1= parseFloat(document.getElementById('nombre1').value);
