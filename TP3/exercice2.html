@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form id="myform">
+        <label>Dimension du tableau</label><br>
+        <input type="text" id="dim"><br>
+        <label > la valeur minimale</label><br>
+        <input type="text" id="min"> <br>
+        <label>la valeur maximale</label><br>
+        <input type="text" id="max"><br>
+        <button id="generateButton">Generer un tableau</button>
+    </form>
+    <div id="tableContainer"></div>
+    <script>
+        document.getElementById("generateButton").addEventListener("click", function(event){
+            event.preventDefault();
+            var dim = parseInt(document.getElementById("dim").value);
+            var min = parseInt(document.getElementById("min").value);
+            var max = parseInt(document.getElementById("max").value);
+
+            if (!dim || isNaN(dim) || !min || isNaN(min) || !max || isNaN(max)) {
+                alert("Les valeurs des champs doivent être des entiers non vides !");
+                return;
+            }
+
+            if (min >= max) {
+                alert("La valeur minimale doit être inférieure à la valeur maximale !");
+                return;
+            }
+
+            var tableHTML = "<table>";
+            var count = 0;
+            for (var i = 0; i < dim; i++) {
+                tableHTML += "<tr>";
+                for (var j = 0; j < 10; j++) {
+                    var randomNumber = Math.floor(Math.random() * (max - min + 1)) + min;
+                    tableHTML += "<td>" + randomNumber + "</td>";
+                    count++;
+                    if (count % 10 === 0) {
+                        tableHTML += "</tr><tr>";
+                    }
+                }
+                tableHTML += "</tr>";
+            }
+            tableHTML += "</table>";
+            document.getElementById("tableContainer").innerHTML = tableHTML;
+        });
+    </script>
+</body>
+</html>

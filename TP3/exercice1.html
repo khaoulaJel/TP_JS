@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Formulaire</title>
+
+</style>
+</head>
+<body>
+
+<form id="myForm">
+
+  <label for="nom">Nom:</label>
+  <input type="text" id="nom" name="nom" required><br>
+  
+  <label for="prenom">Prénom:</label>
+  <input type="text" id="prenom" name="prenom" required><br>
+  
+  <label for="email">Email:</label>
+  <input type="email" id="email" name="email" required><br>
+  
+  <label for="motdepasse">Mot de passe:</label>
+  <input type="password" id="motdepasse" name="motdepasse" required><br>
+  
+  <label for="motdepasse2">Ressaisir le mot de passe:</label>
+  <input type="password" id="motdepasse2" name="motdepasse2" required><br>
+  
+  <label for="telephone">Téléphone:</label>
+  <input type="tel" id="telephone" name="telephone" required><br>
+  
+  <label for="langue">Langue:</label>
+  <select id="langue" name="langue" required>
+    <option value="anglais">Anglais</option>
+    <option value="francais">Français</option>
+  </select><br>
+  
+  <label for="commentaire">Commentaire:</label>
+  <textarea id="commentaire" name="commentaire"></textarea><br>
+  
+  <input type="submit" value="Valider">
+  <input type="reset" value="Annuler">
+
+</form>
+
+<div class="summary" id="summary"></div>
+
+<script>
+document.getElementById("myForm").addEventListener("submit", function(event) {
+  event.preventDefault();
+  var nom = document.getElementById("nom").value;
+  var prenom = document.getElementById("prenom").value;
+  var email = document.getElementById("email").value;
+  var motdepasse = document.getElementById("motdepasse").value;
+  var motdepasse2 = document.getElementById("motdepasse2").value;
+  var telephone = document.getElementById("telephone").value;
+  var langue = document.getElementById("langue").value;
+  var commentaire = document.getElementById("commentaire").value;
+  
+
+  if (nom === '' || prenom === '' || email === '' || motdepasse === '' || motdepasse2 === '' || telephone === '' || langue === '') {
+    alert("Tous les champs sont obligatoires !");
+    return;
+  }
+  
+
+  if (motdepasse !== motdepasse2) {
+    alert("Les mots de passe ne correspondent pas !");
+    return;
+  }
+  
+
+  var summary = "Récapitulatif des informations :<br>" +
+                "Nom: " + nom + "<br>" +
+                "Prénom: " + prenom + "<br>" +
+                "Email: " + email + "<br>" +
+                "Téléphone: " + telephone + "<br>" +
+                "Langue: " + langue + "<br>" +
+                "Commentaire: " + commentaire;
+  document.getElementById("summary").innerHTML = summary;
+});
+
+document.getElementById("myForm").addEventListener("reset", function() {
+
+  document.getElementById("summary").innerHTML = "";
+});
+</script>
+
+</body>
+</html>

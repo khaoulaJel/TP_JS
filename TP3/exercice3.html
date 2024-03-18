@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form id="myForm">
+
+        <label for="code">Code étudiant:</label>
+        <input type="text" id="code" name="code" required><br>
+        
+        <label for="nom">Nom étudiant:</label>
+        <input type="text" id="nom" name="nom" required><br>
+        
+        <label for="prenom">Prénom étudiant:</label>
+        <input type="text" id="prenom" name="prenom" required><br>
+        
+        <label for="semestre">Semestre:</label>
+        <select id="semestre" name="semestre" required>
+          <option value="">-- Sélectionnez un semestre --</option>
+          <option value="Semestre 1">Semestre 1</option>
+          <option value="Semestre 2">Semestre 2</option>
+        </select><br>
+        
+        <label for="module1">Note module 1:</label>
+        <input type="number" id="module1" name="module1" min="0" max="20" required><br>
+        
+        <label for="module2">Note module 2:</label>
+        <input type="number" id="module2" name="module2" min="0" max="20" required><br>
+        
+        <label for="module3">Note module 3:</label>
+        <input type="number" id="module3" name="module3" min="0" max="20" required><br>
+        
+        <label for="module4">Note module 4:</label>
+        <input type="number" id="module4" name="module4" min="0" max="20" required><br>
+        
+        <label for="module5">Note module 5:</label>
+        <input type="number" id="module5" name="module5" min="0" max="20" required><br>
+        
+        <label for="module6">Note module 6:</label>
+        <input type="number" id="module6" name="module6" min="0" max="20" required><br>
+        
+        <input type="submit" value="Valider">
+      </form>
+      
+      <div id="tableContainer"></div>
+      <script>
+        document.getElementById("myForm").addEventListener("submit", function(event){
+            event.preventDefault();
+
+            var code = document.getElementById("code").value;
+            var nom = document.getElementById("nom").value;
+            var prenom = document.getElementById("prenom").value;
+            var semestre = document.getElementById("semestre").value;
+            var notes = [
+                parseFloat(document.getElementById("module1").value),
+                parseFloat(document.getElementById("module2").value),
+                parseFloat(document.getElementById("module3").value),
+                parseFloat(document.getElementById("module4").value),
+                parseFloat(document.getElementById("module5").value),
+                parseFloat(document.getElementById("module6").value)
+            ];
+
+            if (!code || !nom || !prenom || !semestre) {
+                alert("Tous les champs doivent être remplis !");
+                return;
+            }
+
+            for (var i = 0; i < notes.length; i++) {
+                if (isNaN(notes[i]) || notes[i] < 0 || notes[i] > 20) {
+                alert("Les notes doivent être des nombres entre 0 et 20 !");
+                return;
+                }
+            }
+
+            var moyenne = notes.reduce((a, b) => a + b, 0) / notes.length;
+            var modulesNonValides = notes.filter(note => note < 12).length;
+            var noteEliminatoire = notes.some(note => note < 8);
+
+            var validationSemestre = "";
+            if (moyenne >= 12 && modulesNonValides < 3 && !noteEliminatoire) {
+                validationSemestre = "Validé";
+            } else {
+                validationSemestre = "Échoué";
+            }
+            var tableHTML = "<table>";
+            tableHTML += "<tr><th>Code étudiant</th><th>Nom</th><th>Prénom</th><th>Semestre</th>";
+            for (var i = 1; i <= 6; i++) {
+                tableHTML += "<th>Note module " + i + "</th>";
+            }
+            tableHTML += "<th>Moyenne</th><th>Validation</th></tr>";
+            tableHTML += "<tr><td>" + code + "</td><td>" + nom + "</td><td>" + prenom + "</td><td>" + semestre + "</td>";
+            for (var i = 0; i < notes.length; i++) {
+                tableHTML += "<td>" + notes[i] + "</td>";
+            }
+            tableHTML += "<td>" + moyenne.toFixed(2) + "</td><td>" + validationSemestre + "</td></tr>";
+            tableHTML += "</table>";
+
+            document.getElementById("tableContainer").innerHTML = tableHTML;
+        });
+      </script>
+</body>
+</html>
