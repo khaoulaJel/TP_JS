@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <p id="resultat"></p>
+        
+    </div>
+    <script>
+        var variable1= parseFloat(prompt('entrer la premiere variable'));
+        var variable2= parseFloat(prompt('entrer la deuxieme variable'));
+        var variable3= parseFloat(prompt('entrer la troisieme variable'));
+        var resultat= '';
+        switch(true) {
+        case variable1 === variable2 && variable2 === variable3:
+            resultat = "Les trois variables sont identiques.";
+            break;
+        case variable1 === variable2 || variable1 === variable3 || variable2 === variable3:
+            resultat = "Deux des variables sont de valeurs égales.";
+            break;
+        default:
+            resultat = "Les trois variables sont différentes.";}
+            document.getElementById('resultat').textContent = resultat;
+    </script>
+</body>
+</html> 

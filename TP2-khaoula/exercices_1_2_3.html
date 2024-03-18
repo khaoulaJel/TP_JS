@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .exercice1 button{
+            width:100px;
+            height: 20px;
+            background-color: rgb(186, 180, 180);
+            border: 3px solid blue;
+        }
+        .exercice2 button{
+            width:100px;
+            height: 20px;
+            background-color: rgb(186, 180, 180);
+        }
+        .exercice3 button{
+            width:100px;
+            height: 20px;
+            background-color: rgb(186, 180, 180);
+        }
+    </style>
+</head>
+<body>
+    <div class="exercice1">
+        <h1>EXERCICE 1 </h1>
+        <h2>entrer deux nombres a additionner:</h2>
+        <input type="text" placeholder="entrer le premier numero" id="nombre1">+ <input type="text" placeholder="entrer le deuxieme numero" id="nombre2"> = <span id="resultat"> </span> 
+        <button onclick="additionner()"> calculer</button>
+    </div>
+    <div class="exercice2">
+        <h1>EXERCICE 2 </h1>
+        <h2>entrer les deux valeurs a permuter:</h2>
+        <input type="text" placeholder="entrer le premier numero" id="n1">  <input type="text" placeholder="entrer le deuxieme numero" id="n2">
+        <button onclick="permuter()">Permuter</button>
+    </div>
+    <div class="exercice3">
+        <h1>EXERCICE 3 </h1>
+        <h2>entrer les deux valeurs et choisir une operation:</h2>
+        <input type="text" placeholder="entrer le premier numero" id="no1"> 
+        <select id="operation">
+            <option value="+">+</option>
+            <option value="-">-</option>
+            <option value="*">*</option>
+            <option value="/">/</option>
+        </select>
+         <input type="text" placeholder="entrer le deuxieme numero" id="no2"> = <span id="resulat3"></span>
+         <button onclick="calculer()">Calculer</button>
+    
+
+
+    </div>
+    <script>
+        function additionner (){
+            var nombre1= parseFloat(document.getElementById('nombre1').value);
+            var nombre2= parseFloat(document.getElementById('nombre2').value);
+            var resultat=nombre1+nombre2;
+            document.getElementById('resultat').textContent= resultat;
+        }
+        function permuter(){
+            var n1= parseFloat(document.getElementById('n1').value);
+            var n2= parseFloat(document.getElementById('n2').value);
+            var temp=n1;
+            n1=n2;
+            n2=temp;
+            document.getElementById('n1').value=n1;
+            document.getElementById('n2').value=n2;
+        
+        }
+        function calculer(){
+            var no1= parseFloat(document.getElementById('no1').value);
+            var no2= parseFloat(document.getElementById('no2').value);
+            var operation= document.getElementById('operation').value;
+            var resulat3=0;
+
+            switch(operation){
+                case "+":
+                    resulat3= no1+no2;;
+                    break;
+                case "-":
+                    resulat3= no1-no2;;
+                    break;
+                case "*":
+                    resulat3= no1*no2;;
+                    break;
+                case "/":
+                    resulat3= no1/no2;;
+                    break;
+            }
+            document.getElementById('resulat3').textContent=resulat3
+
+            
+        }
+    </script>
+</body>
+</html>
