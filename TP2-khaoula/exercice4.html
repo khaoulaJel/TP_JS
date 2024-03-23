@@ -8,23 +8,30 @@
 <body>
     <div>
         <p id="resultat"></p>
-        
     </div>
     <script>
-        var variable1= parseFloat(prompt('entrer la premiere variable'));
-        var variable2= parseFloat(prompt('entrer la deuxieme variable'));
-        var variable3= parseFloat(prompt('entrer la troisieme variable'));
-        var resultat= '';
-        switch(true) {
-        case variable1 === variable2 && variable2 === variable3:
-            resultat = "Les trois variables sont identiques.";
-            break;
-        case variable1 === variable2 || variable1 === variable3 || variable2 === variable3:
-            resultat = "Deux des variables sont de valeurs égales.";
-            break;
-        default:
-            resultat = "Les trois variables sont différentes.";}
-            document.getElementById('resultat').textContent = resultat;
+        var variable1 = parseFloat(prompt('Entrer la première variable'));
+        var variable2 = parseFloat(prompt('Entrer la deuxième variable'));
+        var variable3 = parseFloat(prompt('Entrer la troisième variable'));
+        var resultat = '';
+
+        // Vérification si les entrées sont des nombres
+        if (!isNaN(variable1) && !isNaN(variable2) && !isNaN(variable3)) {
+            switch (true) {
+                case variable1 === variable2 && variable2 === variable3:
+                    resultat = "Les trois variables sont identiques.";
+                    break;
+                case variable1 === variable2 || variable1 === variable3 || variable2 === variable3:
+                    resultat = "Deux des variables sont de valeurs égales.";
+                    break;
+                default:
+                    resultat = "Les trois variables sont différentes.";
+            }
+        } else {
+            resultat = "Vous devez entrer des valeurs numériques pour les trois variables.";
+        }
+
+        document.getElementById('resultat').textContent = resultat;
     </script>
 </body>
-</html> 
+</html>
