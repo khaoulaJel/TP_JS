@@ -1,0 +1,76 @@
+body {
+  background: #352f5b;
+  color: #fff;
+  font-family: Arial, sans-serif;
+}
+
+.container {
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+input[type="text"],
+input[type="text"]:focus {
+  color: #fff;
+  border: none;
+  background: rgba(0, 0, 0, 0.2);
+  max-width: 400px;
+  width: 100%;
+  padding: 10px;
+  box-sizing: border-box;
+  margin-bottom: 10px;
+}
+
+.todos li {
+  background: #423a6f;
+  margin-bottom: 5px;
+}
+
+.delete,
+.complete {
+  cursor: pointer;
+  margin-left: 10px;
+}
+
+.done span {
+  text-decoration: line-through;
+}
+
+.search {
+  text-align: center;
+}
+
+h1 {
+  margin-bottom: 20px;
+}
+.todos li {
+  background: #423a6f;
+  margin-bottom: 5px;
+  position: relative;
+}
+
+.delete,
+.complete {
+  cursor: pointer;
+  margin-left: 10px;
+  position: absolute; 
+  right: 10px; 
+}
+.complete {
+  cursor: pointer;
+  margin-left: 10px;
+  position: absolute; 
+  right: 35px; 
+}
+
+.done span {
+  text-decoration: line-through;
+}
+
+.search {
+  text-align: center;
+}
+
+h1 {
+  margin-bottom: 20px;
+}
