@@ -1,0 +1,77 @@
+body {
+    background-color: #352f5b; 
+  }
+  
+  .purple-bg {
+    background-color: #563d7c; 
+  }
+  
+  .todo-container {
+    background-color: #c5b0d1; 
+  }
+  
+  .todos li {
+    background: #563d7c;
+    margin-bottom: 5px;
+    padding: 10px;
+    position: relative;
+    border-radius: 5px;
+    color:white;
+  }
+  .todos .list-group-item[style="display: none;"] {
+    display: none !important;
+  }
+  
+  .delete,
+  .complete {
+    cursor: pointer;
+    color: #fff;
+  }
+  
+  .complete::before {
+    content: "\2713";
+    font-size: 1.2em;
+    position: absolute;
+    top: 50%;
+    right: 45px; 
+    transform: translateY(-50%);
+  }
+  
+  .done .complete::before {
+    color: #28a745; 
+  }
+  
+  .delete::before {
+    content: "\2715"; 
+    font-size: 1.2em;
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+  }
+  
+  .done span {
+    text-decoration: line-through;
+    color: #6c757d; 
+  }
+  
+  .search {
+    text-align: center;
+  }
+  
+  h1 {
+    margin-bottom: 20px;
+    color: black;
+  }
+  .completed span {
+    text-decoration: line-through;
+    color: #010101; 
+
+  }
+  .label{
+    color:black;
+  }
+  .add label {
+    font-weight: bold;
+    font-size: 22px;
+  }
