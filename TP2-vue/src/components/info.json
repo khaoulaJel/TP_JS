@@ -1,0 +1,34 @@
+{"jobs" : [
+    {
+      "id": 1,
+      "title": "Software Engineer",
+      "description": "Develops software applications for various platforms.",
+      "salary": 80000,
+      "createdAt": "2024-04-22T10:00:00Z",
+      "experienceYears": 2
+    },
+    {
+      "id": 2,
+      "title": "Data Scientist",
+      "description": "Analyzes and interprets complex data sets to inform business decisions.",
+      "salary": 90000,
+      "createdAt": "2024-04-21T09:30:00Z",
+      "experienceYears": 3
+    },
+    {
+      "id": 3,
+      "title": "UX/UI Designer",
+      "description": "Creates intuitive and visually appealing user interfaces.",
+      "salary": 75000,
+      "createdAt": "2024-04-20T11:15:00Z",
+      "experienceYears": 2
+    },
+    {
+      "id": 4,
+      "title": "Marketing Manager",
+      "description": "Develops and executes marketing strategies to promote products or services.",
+      "salary": 85000,
+      "createdAt": "2024-04-19T08:45:00Z",
+      "experienceYears":4
+    }
+    ]}
