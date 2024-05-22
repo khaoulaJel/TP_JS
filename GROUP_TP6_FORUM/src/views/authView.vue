@@ -1,5 +1,5 @@
 <template>
-  <div  class="welcome container d-flex flex-column justify-content-center align-items-center min-vh-100" >
+  <div class="welcome container d-flex flex-column justify-content-center align-items-center min-vh-100">
     <div class="form-container">
       <h2>{{ showLogin ? 'Login' : 'Sign up' }}</h2>
       <div v-if="showLogin">
@@ -34,16 +34,21 @@ export default {
 </script>
 
 <style scoped>
-.welcome {
-  text-align: center;
-  font-size: 125%;
+#app {
+  margin: 0;
+  padding: 0;
+  height: 100%;
   background-color: rgb(245, 66, 101);
   background-image: linear-gradient(to bottom right, rgb(11, 9, 9) 0%, rgb(179, 55, 80) 100%);
   background-size: cover;
+}
+
+.welcome {
+  text-align: center;
+  font-size: 125%;
   height: 100%;
-  display: flex;
-  align-items: center;
   justify-content: center;
+  background-size: cover;
 }
 
 .form-container {
