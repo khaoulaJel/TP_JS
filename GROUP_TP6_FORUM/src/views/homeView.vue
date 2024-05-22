@@ -5,7 +5,7 @@
       <h1 v-else>Welcome!</h1>
       <p>Explore and engage with our vibrant community!</p>
       <p v-if="threads.length > 0">
-        Explore and engage with our vibrant community! The latest discussion is about {{ threads[0].title || "a hot topic" }}
+        Explore and engage with our vibrant community! The latest discussion is about <b>{{ threads[0].title || "a hot topic" }}</b>
       </p>
       
 
